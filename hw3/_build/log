@@ -1,0 +1,162 @@
+# dune ut
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /mnt/c/kyle/hw3
+# Auto-detected concurrency: 8
+$ /usr/bin/ocamlc.opt -config > /tmp/dune_4df81a_output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path = Some External "/home/kyle/.opam/default/lib/toplevel"
+#  ; ocaml_bin = External "/usr/bin"
+#  ; ocaml = Ok External "/home/kyle/.opam/default/bin/ocaml"
+#  ; ocamlc = External "/usr/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/usr/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/usr/bin/ocamldep.opt"
+#  ; ocamlmklib = Ok External "/usr/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/home/kyle/.opam/default/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/usr/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" : "/mnt/c/kyle/hw3"
+#        ; "INSIDE_DUNE" : "/mnt/c/kyle/hw3/_build/default"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/mnt/c/kyle/hw3/_build/install/default/lib"
+#        ; "OCAMLPATH" : "/mnt/c/kyle/hw3/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/mnt/c/kyle/hw3/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_path = [ External "/home/kyle/.opam/default/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.08.1"
+#      ; standard_library_default = "/usr/lib/ocaml"
+#      ; standard_library = "/usr/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "x86_64-linux-gnu-gcc"
+#      ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-fPIC" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; ocamlopt_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; bytecomp_c_compiler =
+#          [ "x86_64-linux-gnu-gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-fPIC"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-ldl"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "x86_64-linux-gnu-gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; native_c_libraries = [ "-lm"; "-ldl" ]
+#      ; native_pack_linker = [ "x86_64-linux-gnu-ld"; "-r"; "-o" ]
+#      ; cc_profile = [ "-pg" ]
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "linux"
+#      ; asm = [ "x86_64-linux-gnu-as" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-pc-linux-gnu"
+#      ; target = "x86_64-pc-linux-gnu"
+#      ; profiling = true
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = false
+#      ; exec_magic_number = "Caml1999X025"
+#      ; cmi_magic_number = "Caml1999I025"
+#      ; cmo_magic_number = "Caml1999O025"
+#      ; cma_magic_number = "Caml1999A025"
+#      ; cmx_magic_number = "Caml1999Y025"
+#      ; cmxa_magic_number = "Caml1999Z025"
+#      ; ast_impl_magic_number = "Caml1999M025"
+#      ; ast_intf_magic_number = "Caml1999N025"
+#      ; cmxs_magic_number = "Caml1999D025"
+#      ; cmt_magic_number = "Caml1999T025"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/ds.ml) > _build/default/src/.proc.objs/ds.ml.d
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.proc.objs/byte -no-alias-deps -opaque -open Proc -o src/.proc.objs/byte/proc__Ds.cmo -c -impl src/ds.ml)
+> File "src/ds.ml", line 133, characters 27-350:
+> 133 | ...........................function
+> 134 |   | NumVal n -> "NumVal " ^ string_of_int n
+> 135 |   | BoolVal b -> "BoolVal " ^ string_of_bool b
+> 136 |   | UnitVal  -> "UnitVal"
+> 137 |   | ProcVal(par,body,env) -> "ProcVal("^ par ^","^Ast.string_of_expr
+> 138 |                                body^", "^string_of_env' env ^")"    
+> 139 |   | ListVal(_evs) -> "ListVal"
+> 140 |   | TreeVal(_t) -> "TreeVal"
+> Warning 8: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> RecordVal _
+> File "src/ds.ml", line 83, characters 6-7:
+> 83 |   | [(s,v)] -> false
+>            ^
+> Warning 27: unused variable s.
+> File "src/ds.ml", line 83, characters 8-9:
+> 83 |   | [(s,v)] -> false
+>              ^
+> Warning 27: unused variable v.
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.proc.objs/byte -no-alias-deps -opaque -open Proc -o src/.proc.objs/byte/proc__Interp.cmo -c -impl src/interp.ml)
+> File "src/interp.ml", line 108, characters 13-14:
+> 108 |       | Node(x,y,z) -> return @@ (BoolVal false))
+>                    ^
+> Warning 27: unused variable x.
+> File "src/interp.ml", line 108, characters 15-16:
+> 108 |       | Node(x,y,z) -> return @@ (BoolVal false))
+>                      ^
+> Warning 27: unused variable y.
+> File "src/interp.ml", line 108, characters 17-18:
+> 108 |       | Node(x,y,z) -> return @@ (BoolVal false))
+>                        ^
+> Warning 27: unused variable z.
+> File "src/interp.ml", line 131, characters 9-13:
+> 131 |   | Tuple(es) ->  failwith "implement me"
+>                ^^^^
+> Warning 27: unused variable es.
+> File "src/interp.ml", line 132, characters 12-15:
+> 132 |   | Untuple(ids,e1,e2) ->  failwith "implement me"
+>                   ^^^
+> Warning 27: unused variable ids.
+> File "src/interp.ml", line 132, characters 16-18:
+> 132 |   | Untuple(ids,e1,e2) ->  failwith "implement me"
+>                       ^^
+> Warning 27: unused variable e1.
+> File "src/interp.ml", line 132, characters 19-21:
+> 132 |   | Untuple(ids,e1,e2) ->  failwith "implement me"
+>                          ^^
+> Warning 27: unused variable e2.
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -a -o src/proc.cma src/.proc.objs/byte/proc.cmo src/.proc.objs/byte/proc__Ast.cmo src/.proc.objs/byte/proc__Parser.cmo src/.proc.objs/byte/proc__Lexer.cmo src/.proc.objs/byte/proc__Ds.cmo src/.proc.objs/byte/proc__Interp.cmo)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -bin-annot -I src/.utop/.utop.eobjs/byte -I /home/kyle/.opam/default/lib/camomile -I /home/kyle/.opam/default/lib/camomile/default_config -I /home/kyle/.opam/default/lib/camomile/dyn -I /home/kyle/.opam/default/lib/camomile/lib_default -I /home/kyle/.opam/default/lib/camomile/library -I /home/kyle/.opam/default/lib/charInfo_width -I /home/kyle/.opam/default/lib/findlib -I /home/kyle/.opam/default/lib/lambda-term -I /home/kyle/.opam/default/lib/lwt -I /home/kyle/.opam/default/lib/lwt/unix -I /home/kyle/.opam/default/lib/lwt_log -I /home/kyle/.opam/default/lib/lwt_log/core -I /home/kyle/.opam/default/lib/lwt_react -I /home/kyle/.opam/default/lib/mew -I /home/kyle/.opam/default/lib/mew_vi -I /home/kyle/.opam/default/lib/mmap -I /home/kyle/.opam/default/lib/ocplib-endian -I /home/kyle/.opam/default/lib/ocplib-endian/bigstring -I /home/kyle/.opam/default/lib/react -I /home/kyle/.opam/default/lib/result -I /home/kyle/.opam/default/lib/seq -I /home/kyle/.opam/default/lib/trie -I /home/kyle/.opam/default/lib/utop -I /home/kyle/.opam/default/lib/zed -I /usr/lib/ocaml/compiler-libs -I /usr/lib/ocaml/threads -I src/.proc.objs/byte -no-alias-deps -o src/.utop/.utop.eobjs/byte/dune__exe__Utop.cmo -c -impl src/.utop/utop.ml-gen)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -o src/.utop/utop.exe -custom /usr/lib/ocaml/compiler-libs/ocamlcommon.cma /usr/lib/ocaml/compiler-libs/ocamlbytecomp.cma /usr/lib/ocaml/compiler-libs/ocamltoplevel.cma /home/kyle/.opam/default/lib/findlib/findlib.cma /home/kyle/.opam/default/lib/findlib/findlib_top.cma -I /usr/lib/ocaml /home/kyle/.opam/default/lib/result/result.cma /home/kyle/.opam/default/lib/lwt/lwt.cma /usr/lib/ocaml/unix.cma -I /usr/lib/ocaml /usr/lib/ocaml/bigarray.cma -I /usr/lib/ocaml /home/kyle/.opam/default/lib/mmap/mmap.cma /home/kyle/.opam/default/lib/ocplib-endian/ocplib_endian.cma /home/kyle/.opam/default/lib/ocplib-endian/bigstring/ocplib_endian_bigstring.cma /usr/lib/ocaml/threads/threads.cma -I /usr/lib/ocaml /home/kyle/.opam/default/lib/lwt/unix/lwt_unix.cma -I /home/kyle/.opam/default/lib/lwt/unix /home/kyle/.opam/default/lib/react/react.cma /home/kyle/.opam/default/lib/lwt_react/lwt_react.cma /home/kyle/.opam/default/lib/camomile/default_config/camomileDefaultConfig.cma /home/kyle/.opam/default/lib/camomile/library/camomileLibrary.cma /home/kyle/.opam/default/lib/camomile/lib_default/camomileLibraryDefault.cma /home/kyle/.opam/default/lib/camomile/dyn/camomileLibraryDyn.cma /home/kyle/.opam/default/lib/camomile/camomile_yuge.cma /home/kyle/.opam/default/lib/charInfo_width/charInfo_width.cma /home/kyle/.opam/default/lib/zed/zed.cma /home/kyle/.opam/default/lib/lwt_log/core/lwt_log_core.cma /home/kyle/.opam/default/lib/lwt_log/lwt_log.cma /home/kyle/.opam/default/lib/trie/trie.cma /home/kyle/.opam/default/lib/mew/mew.cma /home/kyle/.opam/default/lib/mew_vi/mew_vi.cma /home/kyle/.opam/default/lib/lambda-term/lambda_term.cma -I /home/kyle/.opam/default/lib/lambda-term /home/kyle/.opam/default/lib/utop/uTop.cma src/proc.cma src/.utop/.utop.eobjs/byte/dune__exe__Utop.cmo -linkall -warn-error -31)
